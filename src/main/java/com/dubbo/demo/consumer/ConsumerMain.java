@@ -13,6 +13,9 @@ public class ConsumerMain {
 
         HelloService helloService = (HelloService) classPathXmlApplicationContext.getBean("helloService");
         String world = helloService.hello("World");
+
+        System.out.println("=====================================");
         System.out.println(world);
+        System.out.println("=====================================");
     }
 }
