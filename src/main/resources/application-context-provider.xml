@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+	   ">
+	<dubbo:application name="ws-demo" />
+
+	<dubbo:registry address="N/A" />
+	
+	<dubbo:protocol name="webservice" port="8080" server="servlet" />
+
+	<bean id="helloService" class="com.dubbo.demo.impl.HelloServiceImpl"/>
+
+	<dubbo:service interface="com.dubbo.demo.HelloService" version="1.0.0"
+				   protocol="webservice" ref="helloService"/>
+</beans>
